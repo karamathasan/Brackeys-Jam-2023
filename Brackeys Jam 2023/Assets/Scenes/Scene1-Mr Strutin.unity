@@ -312,8 +312,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 561d44a702935034c876ec909596ebae, type: 2}
+  m_sharedMaterial: {fileID: 8482242335111253981, guid: 561d44a702935034c876ec909596ebae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -729,10 +729,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cd6c779da118c4b823185923ce5f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 848108091}
   conversation: []
+  text: {fileID: 848108091}
   person1: {fileID: 1586187843}
   person2: {fileID: 1174128883}
+  interviewIndex: 0
 --- !u!1 &1457139779
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,7 +803,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1468233689
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

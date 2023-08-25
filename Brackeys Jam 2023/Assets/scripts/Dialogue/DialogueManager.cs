@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI text;
     public Dialogue[] conversation;
+    public TextMeshProUGUI text;
     public Person person1;
     public Person person2;
     private int conversationIndex = 0;
-
+    [SerializeField]
+    private int interviewIndex = 0;
     private bool speaking = false;
 
 
@@ -26,9 +27,14 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown("space") || Input.GetKeyDown("j") || Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown("space") || Input.GetKeyDown("j") || Input.GetMouseButtonDown(0))
         {
             PlayNext();
+        }
+        if (conversation[conversationIndex].personNumber == 2 && (Input.GetKeyDown("z") || Input.GetMouseButtonDown(1)))
+        {
+            Debug.Log("notes taken");
+            Notes.Write(conversation[conversationIndex].line, interviewIndex);
         }
     }
     private void PlayDialogue()

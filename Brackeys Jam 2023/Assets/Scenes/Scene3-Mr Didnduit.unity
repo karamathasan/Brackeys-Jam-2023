@@ -312,8 +312,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 561d44a702935034c876ec909596ebae, type: 2}
+  m_sharedMaterial: {fileID: 8482242335111253981, guid: 561d44a702935034c876ec909596ebae, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -729,15 +729,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cd6c779da118c4b823185923ce5f42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 848108091}
   conversation:
   - {fileID: 11400000, guid: c7f2d98a95a7377499a5daec6e91c1a1, type: 2}
   - {fileID: 11400000, guid: d2a9fe157a97add459c24dc9edd8b929, type: 2}
   - {fileID: 11400000, guid: 1d362716d907d164b8772d24d82c161a, type: 2}
   - {fileID: 11400000, guid: 4e49bc617b53a8a4a82dab9cd0094246, type: 2}
   - {fileID: 11400000, guid: 430eaec8776b70f4d88dcea03b69f0d8, type: 2}
+  text: {fileID: 848108091}
   person1: {fileID: 1586187843}
   person2: {fileID: 1174128883}
+  interviewIndex: 2
 --- !u!1 &1457139779
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,7 +808,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1468233689
-  m_SortingLayer: -1
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bf81ffa12d0a6ae41b087f98edb02285, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
