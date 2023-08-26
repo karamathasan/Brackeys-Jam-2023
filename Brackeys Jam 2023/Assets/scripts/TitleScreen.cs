@@ -8,6 +8,7 @@ public class TitleScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Notes.Clear();
         Application.targetFrameRate = 60;
     }
 

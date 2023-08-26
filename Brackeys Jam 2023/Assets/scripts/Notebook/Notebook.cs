@@ -11,6 +11,7 @@ public class Notebook : MonoBehaviour
     public int currentTab = 1;
     [SerializeField]
     public GameObject[] tabContent;
+
     void Start()
     {
         sr = gameObject.GetComponent<SpriteRenderer>();
