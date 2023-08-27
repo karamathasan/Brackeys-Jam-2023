@@ -20,8 +20,20 @@ public class InterviewSelection : MonoBehaviour
     public Button interviewPlanet;
     public Button interviewDidnduit;
     public Button interviewPetezza;
-    // Start is called before the first frame update
 
+    public GameObject fileReport;
+    // Start is called before the first frame update
+    
+    public static void Clear()
+    {
+        interviewedStrutin = false;
+
+        interviewedPlanet = false;
+
+        interviewedDidnduit = false;
+
+        interviewedPetezza = false;
+    }
     void Start()
     {
         if (interviewedStrutin)
@@ -42,6 +54,11 @@ public class InterviewSelection : MonoBehaviour
         }
         else interviewPetezza.interactable = false;
         interviewStrutin.interactable = true;
+
+        if(interviewedStrutin && interviewedPlanet && interviewedDidnduit && interviewedPetezza)
+        {
+            fileReport.SetActive(true);
+        }
     }
 
     public void NextScene(int buildIndex)

@@ -24,16 +24,17 @@ public class ConfirmReport : MonoBehaviour
         int score = CalculateScore();
         if (score == 5)
         {
-            //transitioner.GetComponent<SceneTransitioner>().LoadNextScene();
+            transitioner.GetComponent<SceneTransitioner>().LoadNextScene(10);
             return;
         }
         else if(score > 1)
         {
+            transitioner.GetComponent<SceneTransitioner>().LoadNextScene(9);
             return;
         }
         else
         {
-
+            transitioner.GetComponent<SceneTransitioner>().LoadNextScene(8);
         }
     }
 }

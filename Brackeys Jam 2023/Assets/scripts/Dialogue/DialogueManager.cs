@@ -31,17 +31,20 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown("space") || Input.GetKeyDown("j") || Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("space") || Input.GetKeyDown("j") | Input.GetKeyDown("z") || Input.GetMouseButtonDown(0))
         {
-            noteAnim.ResetTrigger("TakeNote");
+            if (interviewIndex > 0)
+            {
+                noteAnim.ResetTrigger("TakeNote");
+            }
             PlayNext();
         }
         if (conversation[conversationIndex].personNumber == 2 && (Input.GetKeyDown("z") || Input.GetMouseButtonDown(1)))
         {
-            if(interviewIndex != 0)
+            if(interviewIndex > 0)
             {
-                Debug.Log("notetaken");
                 Notes.Write(conversation[conversationIndex].line, interviewIndex);
+                noteAnim.SetTrigger("TakeNote");
             }
             
         }
@@ -64,6 +67,11 @@ public class DialogueManager : MonoBehaviour
             person1.Darkened(true);
         }
         
+        if (Input.GetKey(KeyCode.LeftShift ) && Application.isEditor == true)
+        {
+            //Skip(conversation[conversationIndex]);
+            return;
+        }
         StartCoroutine(Type(conversation[conversationIndex]));
     }
     private void PlayNext()
@@ -87,10 +95,20 @@ public class DialogueManager : MonoBehaviour
         }
         speaking = false;
     }
+
+    void Skip(Dialogue dialogue)
+    {
+        text.text = dialogue.line;
+    }
     
     private void EndScene()
     {
-        if(interviewIndex == 0)
+        if (interviewIndex == -1)
+        {
+            transitioner.GetComponent<SceneTransitioner>().EndGame();
+            return;
+        }
+        if (interviewIndex == 0 || interviewIndex == 50)
         {
             transitioner.GetComponent<SceneTransitioner>().LoadNextScene(SceneManager.GetActiveScene().buildIndex+1);
             return;
@@ -113,7 +131,6 @@ public class DialogueManager : MonoBehaviour
         }
         
         int count = SceneManager.sceneCountInBuildSettings;
-        Debug.Log(count);
         transitioner.GetComponent<SceneTransitioner>().LoadNextScene(count-1);
 
     }

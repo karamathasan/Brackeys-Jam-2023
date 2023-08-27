@@ -15,8 +15,29 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene1-Mr Strutin.unity
     guid: 8f3a334ddef9de945b2060fd9a10b90b
   - enabled: 1
-    path: Assets/Scenes/Final Scene.unity
+    path: Assets/Scenes/Scene2-Ms Planet.unity
+    guid: e9a6b4a8b3124e94b9e9cea955de6be3
+  - enabled: 1
+    path: Assets/Scenes/Scene3A-Mr Didnduit.unity
+    guid: 0fbd6d50c3fb63a4f879d0779f91d0b9
+  - enabled: 1
+    path: Assets/Scenes/Scene3b-Mr Didnduit.unity
+    guid: 7e8a1fdc5a4000749b3b0b4701368af9
+  - enabled: 1
+    path: Assets/Scenes/Scene4-Chef Petezza.unity
+    guid: b5795d244b61ff0458700eb852839a94
+  - enabled: 1
+    path: Assets/Scenes/Report.unity
     guid: 60e490294eccaa24eae793db2b3912cf
+  - enabled: 1
+    path: Assets/Scenes/results/No Score Ending.unity
+    guid: 276dfbe18c3a8a542817f0e3915505de
+  - enabled: 1
+    path: Assets/Scenes/results/Medium Score Ending.unity
+    guid: 24d046410c9033642853c0ef5bcf064b
+  - enabled: 1
+    path: Assets/Scenes/results/Full Score Ending.unity
+    guid: 88cd2680115ef544fabec13a6cc27b78
   - enabled: 1
     path: Assets/Scenes/Notebook.unity
     guid: de0e3187f06b11449a0d75b91167b78b

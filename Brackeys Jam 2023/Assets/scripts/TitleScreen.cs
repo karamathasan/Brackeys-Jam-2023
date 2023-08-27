@@ -9,7 +9,8 @@ public class TitleScreen : MonoBehaviour
     void Start()
     {
         Notes.Clear();
-        Application.targetFrameRate = 60;
+        InterviewSelection.Clear();
+        Application.targetFrameRate = 75;
     }
 
     public void PlayGame()

@@ -19,4 +19,15 @@ public class SceneTransitioner : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(buildIndex);
     }
+
+    public void EndGame()
+    {
+        StartCoroutine(EndTransition());
+    }
+    IEnumerator EndTransition()
+    {
+        fade.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(0.5f);
+        Application.Quit();
+    }
 }
