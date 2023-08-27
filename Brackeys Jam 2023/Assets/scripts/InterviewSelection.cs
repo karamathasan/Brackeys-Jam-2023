@@ -7,9 +7,13 @@ using UnityEngine.UI;
 
 public class InterviewSelection : MonoBehaviour
 {
+    //[SerializeField]
     public static bool interviewedStrutin = false;
+    //[SerializeField]
     public static bool interviewedPlanet = false;
+    //[SerializeField]
     public static bool interviewedDidnduit = false;
+    //[SerializeField]
     public static bool interviewedPetezza = false;
 
     public Button interviewStrutin;

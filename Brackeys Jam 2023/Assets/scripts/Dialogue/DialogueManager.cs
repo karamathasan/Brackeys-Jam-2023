@@ -16,6 +16,10 @@ public class DialogueManager : MonoBehaviour
     private bool speaking = false;
     [SerializeField]
     private GameObject transitioner;
+    [SerializeField]
+    private Animator noteAnim;
+    [SerializeField]
+    private float typeSpeed = 0.005f;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,12 +33,17 @@ public class DialogueManager : MonoBehaviour
         }
         if (Input.GetKeyDown("space") || Input.GetKeyDown("j") || Input.GetMouseButtonDown(0))
         {
+            noteAnim.ResetTrigger("TakeNote");
             PlayNext();
         }
         if (conversation[conversationIndex].personNumber == 2 && (Input.GetKeyDown("z") || Input.GetMouseButtonDown(1)))
         {
-            //Debug.Log("notes taken");
-            Notes.Write(conversation[conversationIndex].line, interviewIndex);
+            if(interviewIndex != 0)
+            {
+                Debug.Log("notetaken");
+                Notes.Write(conversation[conversationIndex].line, interviewIndex);
+            }
+            
         }
     }
 
@@ -74,30 +83,37 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in dialogue.line)
         {
             text.text += letter;
-            yield return new WaitForSeconds(0.015f);
+            yield return new WaitForSeconds(typeSpeed);
         }
         speaking = false;
     }
     
     private void EndScene()
     {
-        if (interviewIndex == 0)
+        if(interviewIndex == 0)
+        {
+            transitioner.GetComponent<SceneTransitioner>().LoadNextScene(SceneManager.GetActiveScene().buildIndex+1);
+            return;
+        }
+        if (interviewIndex == 1)
         {
             InterviewSelection.interviewedStrutin = true;
         }
-        else if (interviewIndex == 1)
+        else if (interviewIndex == 2)
         {
             InterviewSelection.interviewedPlanet = true;
         }
-        else if (interviewIndex == 2)
+        else if (interviewIndex == 3)
         {
             InterviewSelection.interviewedDidnduit = true;
         }
-        else if (interviewIndex == 3)
+        else if (interviewIndex == 4)
         {
             InterviewSelection.interviewedPetezza = true;
         }
+        
         int count = SceneManager.sceneCountInBuildSettings;
+        Debug.Log(count);
         transitioner.GetComponent<SceneTransitioner>().LoadNextScene(count-1);
 
     }

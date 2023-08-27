@@ -13,16 +13,10 @@ public class DropdownQuestion : MonoBehaviour
     private TMP_Dropdown dropdown;
     public void UpdateStatus()
     {
-        correct = isCorrect();
-    }
-
-    public bool isCorrect()
-    {
         if (text.text == correctAnswer)
         {
-            Debug.Log("thats right");
-            return true;
+            correct = true;
         }
-        else return false;
+        else correct = false;
     }
 }
